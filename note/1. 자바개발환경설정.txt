@@ -1,0 +1,24 @@
+*자바 개발 환경설정*
+
+https://www.oracle.com/downloads
+
+Java SE 클릭 - Java SDK 17 클릭 후 .exe 또는 .msi 파일 클릭해서 설치
+
+제어판 - 시스템 - 시스템 정보 - 고급 사용자 설정 - 환경 변수에서 JAVA_HOME 추가 
+이후 path에서 JAVA_HOME 경로 찾아서 설치
+
+* 이클립스 설치*
+
+https://www.eclipse.org/downloads/packages - 최신 기준 JDK 지원하는 24년 6월 버전으로 설치
+
+*풀더 설정*
+
+학원 컴퓨터 기준
+
+학생방 - 개인 풀더 생성 - 'Downloads', 'lecNote', 'note', 'source' 풀더 생성
+
+Downloads - 자바 설치 파일, 이클립스 설치파일
+lecNote - 매일 강의 하는 강의 파일
+note - 요약한 내용 저장하는 풀더
+source - 이클립스에서 사용한 파일 저장하는 풀더
+

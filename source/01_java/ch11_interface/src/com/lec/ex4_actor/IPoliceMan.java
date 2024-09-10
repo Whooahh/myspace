@@ -1,0 +1,6 @@
+package com.lec.ex4_actor;
+// 인터페이스 : (1) 직업명에서 역할 (2) 다형성 구현 (3) 기능을 부품화
+public interface IPoliceMan {
+	public void canCatchCriminal();
+	public void canSearch();
+}
