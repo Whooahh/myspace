@@ -1,0 +1,2 @@
+DBMS 첫날
+Hi, BigData
