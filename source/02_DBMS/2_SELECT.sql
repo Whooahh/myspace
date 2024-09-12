@@ -28,6 +28,7 @@ SELECT * FROM EMP WHERE SAL<>3000;
 SELECT * FROM EMP WHERE SAL!=3000;
 SELECT * FROM EMP WHERE SAL^=3000;
     -- 비교연산자는 숫자, 문자, 날짜형 모두 가능
+    -- 'A' < 'AA' < 'AAA' < 'AAAA' < 'AAAB' < 'B'
     -- EX1. 사원 이름이 'A', 'B', 'C'로 시작하는 사원의 모든 필드
-    
+    SELECT * FROM EMP WHERE ENAME < 'D';
     -- EX2. 81년도 이전에 입사한 사원의 모든 필드
