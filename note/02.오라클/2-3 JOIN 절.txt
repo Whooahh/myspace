@@ -1,0 +1,16 @@
+* 3장 JOIN 절*
+JOIN은 앞서 SELECT 절에서 부가적으로 추가 하고 싶을 때 사용하는 명령어이다.
+
+CROSS JOIN은 키워드 없이 FROM 절 뒤에 두 개 이상의 테이블을 불러올 때 사용하는 명령어이다.
+EX. SELECT ENAME,DEPTNO FROM EMP ORDER BY DEPTNO;
+EX. SELECT DEPTNO, DNAME FROM DEPT;
+
+CROSS JOIN 종류
+- EQUI JOIN : 동일한 칼럼을 기준으로 조인
+EX. SELECT * FROM emp, dept WHERE emp.deptno=dept.deptno
+- NON-EQUI JOIN :  동일한 칼럼 없이 다른 조건을 사용하여 조인 
+EX. SELECT ename, sal, grage FROM emp, salgrage WHERE sal BETWEEN losal AND sal between losal AND hisal;
+- OUTER JOIN : 조인 조건에 만족하지 않는 행도 나타나는 조인 
+EX. SELECT W.EMPNO, W.MGR, W.ENAME, M.ENAME FROM EMP W, EMP M WHERE W.MGR(+)=M.EMPNO AND W.ENAME IS NULL ORDER BY W.ENAME;
+- SELF JOIN : 한 테이블 내에서 조인 EX.
+EX. SELECT W.ENAME, W.MGR, M.EMPNO, M.ENAME FROM EMP W, EMP M WHERE W.ENAME='SMITH';

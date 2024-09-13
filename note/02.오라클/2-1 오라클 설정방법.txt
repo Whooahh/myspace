@@ -1,0 +1,10 @@
+* 오라클 설치 및 설정 방법*
+
+1. 오라클 데이터 베이스 11g 버전 설치 후 cmd 실행 
+2. cmd 창에서 sqlplus "/as sysdba로 SQLPLUS 실행 또는 sqlplus system/내가 설정한 비밀번호로 SQLPLUS 실행
+3. SQL명령어 창에서 scott,tiger 라는 유저아이디와 비밀번호 생성
+=> create user scott identified tiger;
+4. scott에게 최고권한자 명령
+=>grant dba to scott
+5. SQL 종료 후 SQL Delveloper 압축 해제 후 설치 이후 바탕화면에 SQL Developer 바로가기 뺀 후 실행
+6. SQL Dev 우측 상단 초록색 '+'아이콘 클릭후 scott이라는 유저 생성 (아이디는 scott 비밀번호는 tiger 맨 처음 cmd창과 동일)
