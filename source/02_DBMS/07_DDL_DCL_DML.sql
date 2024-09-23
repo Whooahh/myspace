@@ -1,0 +1,60 @@
+-- [VII] DDL, DCL, DML
+    --SQL = DDL(테이블 생성 ,테이블 삭제, 테이블 구조 변경, 테이블 모든 데이터 제거) +
+    --  DML (SELECT, INSERT, UPDATE, DELETE)+
+    --  DCL (사용자계정생성, 사용자에게 권한 부여, 권한 박탈, 사용자 계정 삭제, 트랜잭션 명령어)
+-- ★ ★ ★ DDL ★ ★ ★
+    -- 1. 테이블 생성 (CREATE TABLE)
+DROP TABLE BOOK;
+CREATE TABLE BOOK (
+    BOOKID NUMBER(4), --BOOK ID 필드의 타입은 숫자 4자리,
+    BOOKNAME VARCHAR2(20), -- BOOKNAME필드의 타입은 문자 20BYTE
+    PUBLISHER VARCHAR2(30),-- PUBLISHER 필드의 타입은 문자 30BYTE
+    RDATE DATE, -- RDATE 필드의 타입은 DATE
+    PRICE NUMBER(8,2), -- PRICE 필드의 타입은 숫자 전체 8자 중 소수점 앞 2자리까지
+    PRIMARY KEY(BOOKID) --제약조건 : BOOKID필드가 주키(PRIMARY, KEY:NOT NULL, UNIQUE)
+);
+SELECT * FROM BOOK;
+DESC BOOK;
+
+DROP TABLE BOOK;
+CREATE TABLE BOOK (
+    BOOKID NUMBER(4), PRIMARY KEY,
+    BOOKNAME VARCHAR2(20), 
+    PUBLISHER VARCHAR2(30),
+    RDATE DATE, 
+    PRICE NUMBER(8,2) 
+);
+SELECT * FROM BOOK;
+    --DEPT01 테이블 생성 : DEPTNO(숫자2:PK), DNAME(문자 14자리), LOC(문자 13자리)
+DESC DEPT;
+CREATE TABLE DEPT01 (
+    DEPTNO NUMBER(2),
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13),
+    PRIMARY KEY(DEPTNO)
+);
+    -- EX. EMP와 유사한 EMP01테이블 : EMPNO(숫자4-PK), ENAME(문자10), SAL(숫자 7,2)
+                        -- DEPTNO(숫자2, DEPT01테이블의 DEPTNO와 연동: 외래키 FK)
+CREATE TABLE EMP01 (
+    EMPNO NUMBER(4) PRIMARY KEY,
+    ENAME VARCHAR2(10),
+    SAL NUMBER(7,2),
+    DEPTNO NUMBER(2) REFERENCES DEPT01(DEPTNO) --FK
+);
+SELECT * FROM DEPT01;
+-- 외래키로 연결할 경우 : 참조 테이블(DEPT01)에 데이터를 먼저 INSERT
+INSERT INTO EMP01 VALUES (1000, 'HONG', 9000, 10);
+INSERT INTO DEPT01 VALUES (10, '신림', 'IT');
+COMMIT;
+DROP TABLE DEPT01; -- 참조하는 테이블이 있을 경우 테이블 삭제 안 됨
+COMMIT;
+
+--서브쿼리를 이용한 테이블 생성
+CREATE TABLE EMP02
+    AS
+    SELECT * FROM EMP;
+DESC EMP02;
+SELECT * FROM EMP02;
+
+CREATE TABLE EMP03 AS SELECT EMPNO, ENAME, DEPTNO FROM EMP;
+SELECT * FROM EMP03;

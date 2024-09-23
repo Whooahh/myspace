@@ -57,9 +57,95 @@ SELECT ENAME, SAL, (SELECT AVG(SAL) FROM EMP) -SAL "DIFF" FROM EMP;
 SELECT JOB, DEPTNO FROM EMP WHERE ENAME='SCOTT'; -- 서브쿼리
 SELECT DEPTNO FROM EMP WHERE ENAME='SCOTT'; -- 서브쿼리
 SELECT * FROM EMP WHERE (JOB, DEPTNO) = (SELECT JOB, DEPTNO FROM EMP WHERE ENAME='SCOTT');
--- 3. 다중행 서브쿼리
+-- 3. 다중행 서브쿼리 : IN, ALL, ANY(=SOME), EXISTS
+    -- (1) ALL
+        -- 30번 부서 직원의 모든 급여들보다 큰 직원의 모든 필드
+SELECT SAL FROM EMP WHERE DEPTNO=30; -- 950,1250,1500,1600,2850 다중 행 서브쿼리
+SELECT * FROM EMP WHERE SAL >ALL(SELECT SAL FROM EMP WHERE DEPTNO=30);
+    -- (== 30번 부서 최대 급여보다 큰 직원의 모든 필드)
+SELECT * FROM EMP WHERE SAL > (SELECT MAX(SAL) FROM EMP WHERE DEPTNO=30);
+    -- (2) ANY(=SOME) : 서브쿼리 결과가 하나라도 만족하면 참
+        -- EX. 30번부서 직원 한 명의 급여보다 큰 직원의 모든 필드
+SELECT SAL FROM EMP WHERE DEPTNO=30;
+SELECT * FROM EMP WHERE SAL > ANY (SELECT SAL FROM EMP WHERE DEPTNO=30);
+        -- (= 30번 부서 최소 급여보다 큰 직원의 모든 필드)
+SELECT * FROM EMP WHERE SAL > ANY (SELECT MIN(SAL) FROM EMP WHERE DEPTNO=30);
+    -- (3) IN
+        -- EX. 부서별 입사일이 가장 늦은 사람의 이름, 입사일, 부서번호
+SELECT DEPTNO, MAX(HIREDATE) FROM EMP GROUP BY DEPTNO; -- 다중 행 다중 열 서브쿼리
+SELECT ENAME, HIREDATE, DEPTNO
+    FROM EMP
+    WHERE (DEPTNO, HIREDATE)
+    IN (SELECT DEPTNO, MAX(HIREDATE) FROM EMP GROUP BY DEPTNO);
+        -- 급여가 3000이상 받은 사원이 소속된 부서 직원의 모든 필드
+SELECT * FROM EMP WHERE DEPTNO IN (SELECT DEPTNO FROM EMP WHERE SAL >= 3000);
+    --(4) EXISTS : 
+        -- EX. 직속부하가 있는 직원들의 사번, 이름 급여
+SELECT DISTINCT W.MGR,M.EMPNO, M.ENAME, M.SAL
+     FROM EMP W, EMP M
+     WHERE W.MGR=M.EMPNO(+); -- SELF JOIN
+SELECT EMPNO, ENAME, SAL FROM EMP MANAGER
+    WHERE EXISTS (SELECT * FROM EMP WHERE 7566=MGR); -- SUBQUERY 사용
+        -- 직속부하가 없는 직원들의 사번, 이름, 급여
+SELECT EMPNO, ENAME, SAL FROM EMP MANAGER
+    WHERE NOT EXISTS (SELECT * FROM EMP WHERE MGR=MANAGER.EMPNO); -- SUBQUERY 사용
+    
+--  (4)	탄탄다지기 (단일행, 다중행)
+-- 탄탄1. 부서별로 가장 급여를 많이 받는 사원의 모든 정보를 출력(IN 연산자 이용)
+	SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO;
+    
+    SELECT * FROM EMP WHERE(DEPTNO, SAL) 
+        IN (SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO) 
+        ORDER BY DEPTNO;
+    -- 변환 예제 (등급 추가)
+    SELECT E.*, DNAME, LOC, GRADE FROM EMP E, DEPT D, SALGRADE
+        WHERE E.DEPTNO=D.DEPTNO AND SAL BETWEEN LOSAL AND HISAL
+        AND(E.DEPTNO,SAL) IN (SELECT DEPTNO, MAX(SAL) FROM EMP GROUP BY DEPTNO) ORDER BY E.DEPTNO;        
+-- 탄탄2. 직급(JOB)이 MANAGER인 사람의 속한 부서의 부서 번호와 부서명과 지역을 출력(IN)
+    SELECT DEPTNO, DNAME, LOC FROM DEPT WHERE DEPTNO IN (SELECT DEPTNO FROM EMP WHERE JOB='MANAGER');
+-- 탄탄3. 급여가 3000이상인 사람들 중 연봉 등급을 나누어서 해당 등급별 최고 급여를 받는 사람들의 사번, 이름, 직업, 입사일, 급여, 급여등급을 출력
+    SELECT GRADE, MAX(SAL)
+        FROM EMP, SALGRADE WHERE SAL  BETWEEN LOSAL AND HISAL AND SAL >= 3000 GROUP BY GRADE;
+        
+    SELECT EMPNO, ENAME, JOB, HIREDATE, SAL, GRADE 
+        FROM EMP, SALGRADE 
+        WHERE SAL BETWEEN LOSAL AND HISAL 
+        AND (GRADE, SAL) IN ( SELECT GRADE, MAX(SAL)
+        FROM EMP, SALGRADE WHERE SAL  BETWEEN LOSAL AND HISAL AND SAL >= 3000 GROUP BY GRADE);
+-- 탄탄4. 응용심화 : 입사일 분기별로 가장 높은 급여를 받는 사람들의 분기, 사번, 이름, JOB, 상사사번, 입사일, 급여, 상여를 출력하세요
+    SELECT HIREDATE, CEIL(EXTRACT(MONTH FROM HIREDATE)/3) "QUARTER" FROM EMP;
+    SELECT HIREDATE, CEIL(TO_CHAR(HIREDATE, 'MM')/3) "QUARTER" FROM EMP;
+    SELECT HIREDATE, TO_CHAR(HIREDATE, 'Q') "QUARTER" FROM EMP;
+    SELECT TO_CHAR(HIREDATE, 'Q'), MAX(SAL) 
+        FROM EMP 
+        GROUP BY TO_CHAR(HIREDATE, 'Q');
+    SELECT TO_CHAR(HIREDATE, 'Q') "QUARTER", EMPNO, ENAME, JOB, MGR, SAL, COMM 
+        FROM EMP 
+        WHERE (TO_CHAR(HIREDATE, 'Q'),SAL) IN (SELECT TO_CHAR(HIREDATE, 'Q'), MAX(SAL) 
+                                                    FROM EMP 
+                                                    GROUP BY TO_CHAR(HIREDATE, 'Q'))
+        ORDER BY QUARTER;  
+-- 탄탄5. 급여가 3000미만인 사람 중에 가장 최근에 입사한 사람의 사원번호와 이름, 급여, 입사일을 출력
+    SELECT MAX(HIREDATE) FROM EMP WHERE SAL<3000; -- 서브쿼리
+    SELECT EMPNO, ENAME, SAL, HIREDATE FROM EMP WHERE HIREDATE = (SELECT MAX(HIREDATE) FROM EMP WHERE SAL < 3000);
+-- 탄탄6. SALESMAN 모든 사원들 보다 급여를 많이 받는 사원들의 이름과 급여와 직급(담당 업무)를 출력하되 영업 사원은 출력하지 않는다.(ALL이용)
+    SELECT SAL FROM EMP WHERE JOB = 'SALESMAN';
+    SELECT ENAME, SAL, JOB 
+        FROM EMP 
+        WHERE SAL > ALL (SELECT SAL FROM EMP WHERE JOB = 'SALESMAN');
+        -- 응용 급여보다 더 많이 받는 사원
+    SELECT ENAME, SAL, JOB 
+        FROM EMP 
+        WHERE SAL > ALL (SELECT MAX(SAL) FROM EMP WHERE JOB = 'SALESMAN');
+-- 탄탄7. SALESMAN 일부 어떤 한 사원보다 급여를 많이 받는 사원들의 이름과 급여와 직급(담당 업무)를 출력하되 영업 사원도 출력(ANY)
+    SELECT ENAME, SAL, JOB
+        FROM EMP
+        WHERE SAL > ANY(SELECT SAL FROM EMP WHERE JOB = 'SALESMAN');
+        -- 단일행
+    SELECT ENAME, SAL, JOB
+        FROM EMP
+        WHERE SAL > ANY(SELECT MIN(SAL) FROM EMP WHERE JOB = 'SALESMAN');
 -- 연습문제
-
 --1. 사원테이블에서 가장 먼저 입사한 사람의 이름, 급여, 입사일
 SELECT HIREDATE, ENAME, SAL 
     FROM EMP 
@@ -141,7 +227,8 @@ SELECT *
 --20. 이름이 JONES인 직원의 JOB과 같거나 FORD의 SAL 이상을 받는 사원의 정보를 이름, 업무, 부서번호, 급여 -- 단, 업무별 알파벳 순, 월급이 많은 순으로 출력
 SELECT ENAME, JOB, DEPTNO, SAL 
     FROM EMP 
-    WHERE JOB IN (SELECT JOB FROM EMP WHERE ENAME='JAMES') OR SAL IN (SELECT SAL FROM EMP WHERE ENAME='FORD') ORDER BY SAL DESC;
+        WHERE JOB IN (SELECT JOB FROM EMP WHERE ENAME='JAMES') OR SAL 
+        IN (SELECT SAL FROM EMP WHERE ENAME='FORD') ORDER BY SAL DESC;
 --21. SCOTT 또는 WARD와 월급이 같은 사원의 정보를 이름,업무,급여
 SELECT ENAME, JOB, SAL 
     FROM EMP 
@@ -153,11 +240,11 @@ SELECT ENAME, JOB
 --23. 부서별 평균 월급보다 높은 사원을 사번, 이름, 급여
 SELECT EMPNO, ENAME, SAL 
     FROM EMP E 
-    WHERE SAL > (SELECT AVG(SAL) FROM EMP WHERE JOB=E.JOB);
+    WHERE SAL > (SELECT AVG(SAL) FROM EMP WHERE DEPTNO = E.DEPTNO);
 --24. 업무별 평균 월급보다 적은 월급을 받는 사원을 부서번호, 이름, 급여
 SELECT EMPNO, ENAME, SAL 
     FROM EMP E 
-    WHERE SAL < ALL(SELECT AVG(SAL) FROM EMP GROUP BY JOB);
+    WHERE SAL < ALL(SELECT AVG(SAL) FROM EMP WHERE JOB = E.JOB);
 --25. 적어도 한 명 이상으로부터 보고를 받을 수 있는 사원을 업무, 이름, 사번, 부서번호를 출력(단, 부서번호 순 으로 오름차순 정렬)
 SELECT JOB, ENAME, EMPNO, DEPTNO 
     FROM EMP 
