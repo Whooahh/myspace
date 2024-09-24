@@ -1,0 +1,3 @@
+-- soctt2 화면 --
+SELECT * FROM TAB;
+SELECT * FROM USER_TABLES;
