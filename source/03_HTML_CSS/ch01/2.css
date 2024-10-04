@@ -1,0 +1,11 @@
+﻿/* 
+2. CSS 파일
+    디자인 영역(CSS) CSS 선택자{속성:기본값}
+*/
+
+
+body{
+    background-color : yellow;
+    font-size : 30pt;
+
+}

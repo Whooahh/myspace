@@ -1,0 +1,15 @@
+﻿table {
+    background-color: red;
+}
+
+tr {
+    background-color: lightyellow;
+}
+
+    tr:hover {
+        background-color: red;
+    }
+
+caption {
+    background-color: white;
+}
