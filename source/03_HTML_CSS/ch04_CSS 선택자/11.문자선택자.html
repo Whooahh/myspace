@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:750px; margin: 0 auto;
+        }
+        #header{
+            text-align:center;
+            border-bottom:1px solid lightgray;
+        }
+        #content{
+            padding: 0 10px;
+            text-align: justify; /*혼합 정렬*/
+            border-bottom: 1px solid lightgray;
+        }
+        #content p:nth-child(2):first-line,
+        #content p:nth-child(3):first-line{
+            color:blue;
+            font-weight:bold;
+            font-size:20px;
+        }
+        #content p:nth-child(2):first-letter,
+        #content p:nth-child(3) > span{
+            font-size:2em; /*원래 크기의 2배*/
+        }
+        #content p:nth-child(2)::selection{
+            background-color:violet;
+            color:yellow;
+        }
+        #footer ul{overflow:hidden;}
+        #footer ul li{
+            float:left;
+            list-style:none;
+        }
+        #footer ul li:first-child{
+            margin: 20px 10px 20px 20px;
+        }
+        #footer ul li:last-child{
+            margin: 10px 20px 20px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>내일은 한글날 날씨는 매우 화창해도 추운 날씨는 유지될 것</p>
+            <p>국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다. 국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다. 비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병·초소·유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다. 다만, 사형을 선고한 경우에는 그러하지 아니하다. 국가는 균형있는 국민경제의 성장 및 안정과 적정한 소득의 분배를 유지하고, 시장의 지배와 경제력의 남용을 방지하며, 경제주체간의 조화를 통한 경제의 민주화를 위하여 경제에 관한 규제와 조정을 할 수 있다.</p>
+            <p>
+                The Israeli military has claimed that it killed the commander of Hezbollah’s headquarters, Suhail Hussein Husseini, in “the area of Beirut.”
+
+                CNN is unable to independently verify the claim, how senior in Hezbollah Husseini is, and what role he played. Hezbollah has yet to confirm whether Husseini has been killed.
+
+                The Israeli military said the “headquarters oversees logistics” for Hezbollah and is “in charge of budgeting and management of its various units in the organization.”
+
+                Husseini, according to the Israeli military, played a role in “weapon transfers between Iran and Hezbollah and was responsible for distributing the advanced weaponry among Hezbollah’s units,” and he also was a “member of the Jihad council, Hezbollah’s senior military leadership council.”
+            </p>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" alt="회사로고" /></li>
+                <li><img src="ch04/address.png" alt="회사정보" /></li>
+            </ul>
+       </div>
+    </div>
+</body>
+</html>
