@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="UI 구현평가.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="nav">
+        <div id="nav_left">
+            <ul>
+                <li><a href="#nl1">LOGO</a></li>
+                <li><a href="#nl2">참여하기</a></li>
+                <li><a href="#nl3">개설하기</a></li>
+                <li><a href="#nl4">검색하기</a></li>
+            </ul>
+        </div>
+        <div id="nav_right">
+            <ul>
+            <li><a href="#nr1">홍길동님</a></li>
+            <li><a href="#nr1">로그아웃</a></li>
+            <li><a href="#nr1">고객센터</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="form">
+        <div id="content">
+         <div id="title">마이페이지</div>
+           <div id="lnb">
+                <ul>
+                 <li><a href="#lnb">나의여행</a></li>
+                 <li><a href="#lnb">참여여행</a></li>
+                 <li><a href="#lnb">관심여행</a></li>
+                 <li><a href="#lnb">개인정보변경</a></li>
+                 <li><a href="#lnb">비밀번호변경</a></li>
+       </ul>
+   </div>
+    <div id="my_content"></div>
+    <div id="modify">
+        <fieldset>
+            <div id="sub_title">개인정보변경</div>
+                 <table>
+                    <tr>
+          <td><label for="name">이름 <b></b></label></td>
+               <td>
+                   <input type="text" id="name" name="name"
+                          autofocus="autofocus"
+                          pattern="[a-zA-Z가-힣]{2,}" />
+               </td>
+           </tr>
+        <tr>
+           <td><label for="id">아이디 <b></b></label></td>
+              <td>
+                 <input type="text" id="id" name="id"
+                      pattern="[a-zA-Z0-9]{4,}"
+                      required="required">
+               </td>
+           </tr>
+           <tr>
+               <td><label for="mail">이메일 <b></b></label></td>
+               <td>
+                   <input type="email" id="email" name="email" required="required">
+               </td>
+           </tr>
+           <tr>
+               <td><label for="tel">전화 <b></b></label></td>
+               <td>
+                   <input type="tel" id="tel" name="tel">
+               </td>
+           </tr>
+           <tr>
+               <td><label for="tel">생년월일 <b></b></label></td>
+               <td>
+                   <input type="text" id="date" name="date"
+                          pattern="\d{2,3}-\d{3,4}-\d{4}"
+                          required="required">
+               </td>
+           </tr>
+           <tr>
+               <td><label for="addr">주소 <b></b></label></td>
+               <td>
+                   <input type="text" id="addr" name="addr"
+                          pattern="[a-zA-Z0-9가-힣\.]+@[a-zA-Z0-9]+(\.[a-z]+){1,2}"
+                          required="required">
+               </td>
+           </tr>
+       </table>
+       </fieldset>
+             </div>           
+        </div>  
+    </div>
+    <footer>footer</footer>
+</body>
+</html>

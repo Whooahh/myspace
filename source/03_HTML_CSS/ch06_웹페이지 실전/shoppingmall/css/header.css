@@ -1,0 +1,82 @@
+﻿/* * header * */
+/* * * 페이지 초기화 * * */
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../font/Roboto-Regular.ttf'); /*css파일 기준으로*/
+}
+* {margin: 0; padding: 0; font-family: Roboto-Regular, Consolas;}
+a{
+    text-decoration:none; color:black; display:block;
+}
+li{list-style:none;}
+/* * * header .gnb * * */
+header .gnb{
+    /*width:100%*/
+    background-color:black;
+}
+header .gnb ul{
+    width:1000px; margin:0 auto;
+    height:30px; line-height:30px;
+    overflow:hidden;
+}
+header .gnb ul li{
+    float:left;
+    width:80px;
+    margin: 0 15px;
+    /*border:1px solid yellow; box-sizing:border-box;*/
+    text-align:center;
+}
+header .gnb ul li a{color:white;}
+
+/* * * * header .logo * * * */
+header > .logo {
+    font-family: "Dancing Script", cursive;
+    width:300px; height:100px; line-height:100px; text-align:center;
+    border:1px solid gray;
+    margin:30px auto;
+    font-size:2em;
+}
+/* * * * * header .hitmenu * * * * */
+header .hitmenu ul{
+    width:1000px;
+    margin:3px auto;
+    overflow:hidden;
+}
+header .hitmenu ul li{
+    float:right;
+    border:1px solid black;
+    padding:0 10px;
+}
+header .hitmenu ul li a{
+   /* width:90px;
+    height:40px;
+    line-height:40px;
+    text-align:center;*/
+    padding:10px 30px;
+}
+header .hitmenu ul li:first-child{
+    border-radius:0 10px 10px 0;
+}
+header .hitmenu ul li:last-child{
+    border-radius: 10px 0 0 10px;
+}
+
+/* * * * * header .lnb* * * * */
+header .lnb{
+    border-top:1px dashed;
+    border-bottom:1px dashed; 
+}
+    header .lnb ul {
+        width: 1000px;
+        margin: 0 auto;
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+    }
+    header .lnb ul li {
+        float: left;
+        width: 120px; margin:0 2.5px;
+        text-align: center;
+    }
+
+/* * * * * #content * * * * */
