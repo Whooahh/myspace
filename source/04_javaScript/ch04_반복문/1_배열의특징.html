@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        //자바 스크립트에서의 배열
+        var arr = [1, 2, '홍길동', true, function(){alert(1);}, [1,2]];
+        document.write(arr[0] + "," + arr[1]);
+        var person = {'name' : '홍길동', 'age' : 20};
+        document.write(person['name'] + "," + person['age']);
+        document.write('arr의 타입 : ' + typeof(arr) + ', 값 : ' + arr + '<br>');
+        document.write('arr의 방의 갯수 : ' + arr.length + '<br>');
+        arr.push(66); //arr 제일 끝 인덱스 뒤에 추가
+        arr.unshift(0); // arr 배열 0방에 추가, 기존의 방들은 shift
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

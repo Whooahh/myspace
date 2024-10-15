@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <title></title>
+    <style>
+        
+    </style>
+    <script>
+        //확인 클릭시 입력한 스트링을 return, 취소 클릭시 null return
+        let scoreStr = prompt('점수를 입력하세요', '0~100');
+        document.write('타입 : ' + typeof(scoreStr) + ', 값 : ' + scoreStr);
+        //let score = Number(scoreStr); // "99" -> 99, "a" -> NaN
+        let score = parseInt(scoreStr); // "99" -> 99, "a" -> NaN
+        document.write('score타입 : ' + typeof(score) + ', 값 : ' + score);
+        if(! isNaN(score)){
+            var msg = score>=80? "잘했어요":"분발하세요";
+            document.write(msg);
+        }else{
+            document.write('점수를 입력하세요');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
