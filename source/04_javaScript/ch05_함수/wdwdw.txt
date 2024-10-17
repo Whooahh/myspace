@@ -1,0 +1,20 @@
+1. *.csv
+name,age
+'홍길동',22
+'김길동',31
+
+2. *.json
+[{'name':'홍길동'.'age':22},
+{'name':'고길동'.'age':31}]
+
+3. *.xml
+<person>
+	<name>홍길동</name>
+	<age>22
+</person>
+<person>
+	<name>김길동</name>
+	<age>31
+</person>
+
+4. *.xlsx

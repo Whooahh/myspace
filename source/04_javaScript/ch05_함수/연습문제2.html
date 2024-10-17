@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <title></title>
+    <style>
+        body{
+            background-size : 100%;
+            color: white;
+        }
+    </style>
+    <script>
+        var sec = 0; // 1초 지날 때마다 증가
+        var col = ['#FFFF00', '#000000', '#FFFFFF'];
+        var img = ['ch05_img/img01.png','ch05_img/img02.png','ch05_img/img03.png']
+        var id = setInterval(()=>{
+            document.body.style.backgroundImage = 'url(' + img[sec%img.length] + ')';
+            document.body.innerHTML = '<h4>' + new Date() + '</h4>';
+            document.body.style.color = col[sec%3];
+            sec++ ; 
+        }, 1000);
+        // 시간 출력
+        setTimeout(()=>{
+            clearInterval(id);
+            document.body.innerHTML += '<h4>10초가 초과되어서 타이머 중지함</h4>';
+        },10000)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

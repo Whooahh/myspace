@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <html>
+    <script>
+        function Student(name, kor,mat,eng,sci){
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+            this.eng = eng;
+            this.sci = sci;
+        } // 생성자 함수(Student)
+        // Student 공통영역 (Prototype)에 getSum, getAvg, toString
+        Student.prototype.getSum = function(){
+            return this.kor+ this.eng + this.mat + this.sci;
+        };
+        Student.prototype.getAvg = function(){
+            return this.getSum()/4;
+        };
+        Student.prototype.toString = function(){
+                var output ='';
+                for(let key in this){
+                    if(key !='getSum' && key !='getAvg' && key !='toString'){
+                        output += key + ':' + this[key] + ' ';
+                    }else if(key ==='getSum'){
+                        output += key.substring(3) + ':' + this[key]() + ' ';
+                    }else if(key === 'getAvg'){
+                        output += key.substring(3) + ':' + this[key]() + '\n';
+                    }
+                }
+                return output;
+            }
+        let s = new Student ('홍', 99, 95, 85, 70);
+        let s1 = new Student('박', 88, 89, 92, 95);
+
+        let students = [new Student("함길동", 99, 95, 96 ,94),
+                        new Student("함길동", 99, 95, 96 ,94),
+                        new Student("함길동", 99, 95, 96 ,94),
+                        new Student("함길동", 99, 95, 96 ,94),
+                        new Student("함길동", 99, 95, 96 ,94)
+        ];
+        students.push(new Student("성춘향", 99, 95, 90 ,88));
+        students.forEach((item, i)=>{
+            document.write(i + '번째' + item + '<br>');
+        });
+        students.pop();
+        students.pop();
+        students.pop();
+        document.write('<h3>pop 후</h3>');
+        students.forEach(item => document.write(item + '<br>'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
