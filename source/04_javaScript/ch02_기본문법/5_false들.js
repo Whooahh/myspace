@@ -7,6 +7,5 @@ console.log(Boolean(NaN));
 console.log(Boolean(null));
 console.log(); // 개행
 console.log(Boolean(-999));
-
-console.log("빈스트링==false의 결과 : " +(""==false));
-console.log("빈스트링===false의 결과 : " +(""===false));
+console.log("빈스트링==false의 결과 : " + (""==false));
+console.log("빈스트링===false의 결과 : " + (""===false));

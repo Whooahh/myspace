@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <style>
+        p{text-align: center;}
+    </style>
+    <script>
+        function openConfirm(){
+            var child = open('5_confirm.html', '', 'width=500px; height=200px');
+            if(!child){
+                alert('팝업 차단 해제 부탁');
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return chk()">
+        <p>
+            아이디 <input type="text" name="id" id="id">
+            <input type="button" value="중복확인" onclick="openConfirm()">
+        </p>
+        <p>
+            <input type="submit" value="회원가입">
+        </p>
+    </form>
+</body>
+</html>

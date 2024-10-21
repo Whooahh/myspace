@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상 글씨 출력 예제</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            width:800px;
+            
+        }
+        .left {
+            text-align: center;
+        }
+        .right {
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            transition: opacity 0.3s;
+            opacity: 0;
+            font-weight: bold;
+        }
+        table {
+            width: 500px;
+            height: 200px;
+            margin: 50px auto;
+            
+        }
+        h3 {
+            text-align: center;
+        }
+        .color-box {
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .red { background-color: red; }
+        .orange { background-color: orange; }
+        .yellow { background-color: yellow; color: black; }
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+        .navy { background-color: navy; }
+        .violet { background-color: violet; }
+    </style>
+    <script>
+        function showText(color) {
+            const rightPanel = document.getElementById('right-panel');
+            rightPanel.textContent = '야호 거의 끝났다';
+            rightPanel.style.opacity = 1; // Show text
+            document.body.style= "background-color:black";
+            rightPanel.style.color = color;
+        }
+
+        function hideText() {
+            const rightPanel = document.getElementById('right-panel');
+            rightPanel.style.opacity = 0; // Hide text
+        }
+    </script>
+</head>
+<body>
+    <h3>야호 거의 끝났다</h3>
+    <div class="left">
+        <table>
+            <tr>
+                <td class="color-box red" onmouseover="showText('red')" onmouseout="hideText()"></td>
+                <td class="color-box orange" onmouseover="showText('orange')" onmouseout="hideText()"></td>
+                <td class="color-box yellow" onmouseover="showText('yellow')" onmouseout="hideText()"></td>
+                <td class="color-box green" onmouseover="showText('green')" onmouseout="hideText()"></td>
+                <td class="color-box blue" onmouseover="showText('blue')" onmouseout="hideText()"></td>
+                <td class="color-box navy" onmouseover="showText('navy')" onmouseout="hideText()"></td>
+                <td class="color-box violet" onmouseover="showText('violet')" onmouseout="hideText()"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="right" id="right-panel">
+        <!-- 색상이 여기에 나타납니다 -->
+    </div>
+</body>
+</html>

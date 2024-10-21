@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <style>
+        body{
+            transition: background-color 0.3s;
+            background-color: white;
+        }
+        table{
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .red {background-color: red;};
+        .red {background-color: orange;};
+        .red {background-color: yellow, black;};
+        .red {background-color: green;};
+        .red {background-color: blue;};
+        .red {background-color: navy;};
+        .red {background-color: violet;};
+    </style>
+    <script>
+        function changeColor(color){
+            document.body.style.backgroundColor = color;
+        }
+        function resetColor(){
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+</head>
+<body>
+    <h3>1. 마우스르 가져다 올리면 바탕화면도 해당 색으로</h3>
+    <table>
+        <tr>
+            <td class="red" onmouseover="changeColor('red')" onmouseout="resetColor()">빨강</td>
+            <td class="orange" onmouseover="changeColor('orange')" onmouseout="resetColor()">주황</td>
+            <td class="yellow" onmouseover="changeColor('yellow')" onmouseout="resetColor()">노랑</td>
+            <td class="green" onmouseover="changeColor('green')" onmouseout="resetColor()">초록</td>
+            <td class="blue" onmouseover="changeColor('blue')" onmouseout="resetColor()">파랑</td>
+            <td class="navy" onmouseover="changeColor('navy')" onmouseout="resetColor()">남색</td>
+            <td class="violet" onmouseover="changeColor('violet')" onmouseout="resetColor()">보라</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,38 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
-    <title></title>
-    <style>
-        
-    </style>
-    <script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>
+    // 국어, 영어점수 입력받아 국, 영, 평균을 출력(prompt, Number나 parseInt함수 이용)
+    let kor, eng;
+    do{
+      korStr = prompt("범위에 맞는 국어점수는(0~100)?");
+      kor = Number(korStr);
+    }while(!korStr || !korStr.trim() || isNaN(kor) || kor<0 || kor>100);
 
-// 사용자로부터 국어, 영어점수를 입력받아 국, 영, 평균을 출력
-
-let korScore;
-    do {
-    korScore = Number(prompt("국어 점수를 입력 (0~100):"));
-    } while (isNaN(korScore) || korScore < 0 || korScore > 100);
-
-    // 영어 점수 입력
-
-let engScore;
-    do {
-    engScore = Number(prompt("영어 점수를 입력 (0~100):"));
-    } while (isNaN(engScore) || engScore < 0 || engScore > 100);
-
-// 평균 점수 계산
-const avgScore = (korScore + engScore) / 2;
-
-// 결과 출력
-document.write(`국어 점수: ${korScore}<br>`);
-document.write(`영어 점수: ${engScore}<br>`);
-document.write(`평균 점수: ${avgScore.toFixed(2)}`);
-    </script>
+    do{
+      eng = parseInt(prompt("범위에 맞는 영어점수는(0~100)?"));
+    }while(isNaN(eng) || eng<0 || eng>100);
+    document.write('국어:' + kor + '<br>');
+    document.write('영어:' + eng + '<br>');
+    document.body.innerHTML += '평균 :' + ((kor+eng)/2) + '<br>';
+  </script>
 </head>
 <body>
-    
+  
 </body>
 </html>
+
+

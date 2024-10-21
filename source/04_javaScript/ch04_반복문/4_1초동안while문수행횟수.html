@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
-    <title></title>
-    <style>
-        
-    </style>
-    <script>
-        var cnt = 0; //횟수
-        var startTime = new Date().getTime();
-        while(new Date().getTime() <= startTime + 1000){
-            cnt++;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>
+    var cnt = 0; // 횟수
+    var startTime = new Date().getTime(); // 현재 시점의 밀리세컨 1조몇
+    while(new Date().getTime() <= startTime + 1000){
+      cnt++;
+    }
+    document.write('횟수 : ' + cnt + '번<br>');
+    var cntStr = String(cnt); // '7883639' -> '7,883,639'
+    var temp = cntStr.length % 3;
+    for(var idx=0 ; idx<cntStr.length ; idx++){
+      if(temp==0){
+        if(idx!=0){
+          document.write(',');
         }
-        document.write('횟수 : ' + cnt + '번<br>');
-        var cntStr = String(cnt);
-        var temp = cntStr.length % 3;
-        for(var idx=0 ; idx<cntStr.length ; idx++){
-            if(temp==0){
-                if(idx!=0){
-                    document.write(',')
-                } 
-                temp=3;
-            }
-            document.write(cntStr[idx]);
-            temp --;
-        }
-    </script>
+        temp = 3;        
+      }
+      document.write(cntStr[idx]);
+      temp --;
+    }
+  </script>
 </head>
 <body>
-    
+  
 </body>
 </html>

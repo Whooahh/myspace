@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
-    <html>
-    <script>
-        function Student(name, kor,mat,eng,sci){
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <script>
+    /* class Student{
+          private String name;
+          private int kor;
+          private int eng;
+          ....
+          public Student(String name, int kor, int eng...){
             this.name = name;
-            this.kor = kor;
-            this.mat = mat;
-            this.eng = eng;
-            this.sci = sci;
-            this.getSum = function(){
-                return this.kor + this.mat + this.eng + this.sci;
-            }
-            this.getAvg = function(){
-                return this.getSum()/4;
+            this.kor  = kor;
+            ...
+          }
         }
-        this.toString = function(){
-                var output ='';
-                for(let key in this){
-                    if(key !='getSum' && key !='getAvg' && key !='toString'){
-                        output += key + ':' + this[key] + ' ';
-                    }else if(key ==='getSum'){
-                        output += key.substring(3) + ':' + this[key]() + ' ';
-                    }else if(key === 'getAvg'){
-                        output += key.substring(3) + ':' + this[key]() + '\n';
-                    }
-                }
-                return output;
-            }
-        } // 생성자 함수(Student)
-        let s = new Student("홍", 100, 100, 100, 100);
-
-        let s1 = new Student("박", 99, 98, 97, 96 );
-        
-        let students = [new Student("함길동", 99, 95, 96 ,94),
-                        new Student("함길동", 99, 95, 96 ,94),
-                        new Student("함길동", 99, 95, 96 ,94),
-                        new Student("함길동", 99, 95, 96 ,94),
-                        new Student("함길동", 99, 95, 96 ,94)
-        ];
-        students.push(new Student("성춘향", 99, 95, 90 ,88));
-        students.forEach((item, i)=>{
-            document.write(i + '번째' + item + '<br>');
-        });
-        students.pop();
-        students.pop();
-        students.pop();
-        document.write('<h3>pop 후</h3>');
-        students.forEach(item => document.write(item + '<br>'));
+    */
+    function Student(name, kor, mat, eng, sci){
+      this.name = name;
+      this.kor = kor;
+      this.mat = mat;
+      this.eng = eng;
+      this.sci = sci;
+      this.getSum = function(){
+        return this.kor + this.mat + this.eng + this.sci;
+      };
+      this.getAvg = function(){
+        return this.getSum()/4;
+      };
+      this.toString = function(){
+        var output = '';
+        for(let key in this){
+          if(key!='getSum' && key!='getAvg' && key!='toString'){
+            output += key + ':' + this[key] + ' ';
+          }else if(key=='getSum'){
+            output += key.substring(3) + ':' + this[key]() + ' ';
+          }else if(key == 'getAvg'){
+            output += key.substring(3) + ':' + this[key]() + '\n';
+          }//if
+        }//for
+        return output;
+      };//toString
+    } // 생성자함수(Student)
+    let students = [new Student("함길동", 90,95,94,96),
+                    new Student("함길동", 90,95,94,96),
+                    new Student("함길동", 90,95,94,96),
+                    new Student("함길동", 90,95,94,96),
+                    new Student("함길동", 90,95,94,96),
+    ];
+    students.push(new Student("성춘향", 99, 66, 88, 77));
+    students.forEach((item, i)=>{
+      document.write(i + '번째' + item + '<br>');
+    });
+    students.pop(); // 배열 마지막 인덱스 값을 제거
+    students.pop(); // 배열 마지막 인덱스 값을 제거
+    students.pop(); // 배열 마지막 인덱스 값을 제거
+    document.write('<h3>pop 후</h3>');
+    students.forEach(item => document.write(item +'<br>'));
     </script>
 </head>
 <body>
-    
+  
 </body>
 </html>
