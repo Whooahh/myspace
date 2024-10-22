@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var downGif = 'ch11_img/but2.gif';
+        var upGif = 'ch11_img/but1.gif';
+
+        window.onload = () => {
+            var gif = document.getElementById('gifButton');
+            gif.onmousedown = () => {
+                gif.src = downGif;
+            }
+            gif.onmouseup = () => {
+                gif.src = upGif;
+            }
+        };
+    </script>
+</head>
+<body>
+    <img id="gifButton" src="ch11_img/but1.gif" alt="mouse up"/>
+</body>
+</html>

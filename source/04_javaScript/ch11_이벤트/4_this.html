@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maxinum-scale=1.0" />
+    <script>
+        window.onload = () =>{
+            var h1 = document.querySelectorAll('h1.header');
+            // h1 = document.getElementsByClassName('header');
+            // h1 = document.getElementsByTagName('h1');
+            for(var idx in h1){
+                h1[idx].onclick = function(){
+                    this.innerHTML += '★';
+                    // this.style.color = 'red';
+                    this.style='color:red; border:1px solid orange';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="header">click1</h1>
+    <h1 class="header">click2</h1>
+    <h1 class="header">click3</h1>
+    <h1 class="header">click4</h1>
+    <h1 class="header">click5</h1>
+</body>
+</html>
