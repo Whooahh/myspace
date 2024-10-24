@@ -5,23 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-	p{text-align: center;}
-</style>
 </head>
 <body>
 <%
-	//http://localhost:8090/ch02_semiJSP/ex4_gugudanOut.jsp?su=3
-// 	String suStr = request.getParameter("su");
-//	int su=0;
-//	if(suStr!=null && suStr.equals("")){
-	//	su = Integer.parseInt(suStr);	 
-//	}
-int su = Integer.parseInt(request.getParameter("su"));
+	// http://localhost:8090/ch02_semiJSP/ex4_gugudanOut.jsp?su=3
+	//String suStr = request.getParameter("su"); // su 파라미터값(String) 받는 함수
+	//int su = Integer.parseInt(suStr);
+	int su = Integer.parseInt(request.getParameter("su"));	
 %>
-<h2><%=su %>단 구구단</h2>
-<%for(int i=1 ; i<=9 ; i++){%>
-	<p><%=su %>* <%=i %> = <%=su*i %></p>
-	<%}%>
+	<h2><%=su %>단 구구단</h2>
+	<%for(int i=1 ; i<=9 ; i++){ %>
+		<p><%=su %> * <%=i %> = <%=su*i %> </p>
+	<%} %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
