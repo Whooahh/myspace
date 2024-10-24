@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\quiz.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:quiz.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -24,11 +20,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "1_\uAE00\uC790\uD0DC\uADF8.html",
               "DocumentMoniker": "D:\\myspace\\source\\03_HTML_CSS\\ch02_HTML_I_\uAE00\uC790\uBAA9\uB85D\uD45C\\1_\uAE00\uC790\uD0DC\uADF8.html",
               "RelativeDocumentMoniker": "..\\ch02_HTML_I_\uAE00\uC790\uBAA9\uB85D\uD45C\\1_\uAE00\uC790\uD0DC\uADF8.html",
@@ -42,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "3_\uBAA9\uB85D\uD0DD.html",
               "DocumentMoniker": "D:\\myspace\\source\\03_HTML_CSS\\ch02_HTML_I_\uAE00\uC790\uBAA9\uB85D\uD45C\\3_\uBAA9\uB85D\uD0DD.html",
               "RelativeDocumentMoniker": "..\\ch02_HTML_I_\uAE00\uC790\uBAA9\uB85D\uD45C\\3_\uBAA9\uB85D\uD0DD.html",
@@ -50,54 +46,19 @@
               "RelativeToolTip": "..\\ch02_HTML_I_\uAE00\uC790\uBAA9\uB85D\uD45C\\3_\uBAA9\uB85D\uD0DD.html",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvw4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-08T07:21:12.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-08T07:21:12.947Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "quiz.html",
               "DocumentMoniker": "D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\quiz.html",
               "RelativeDocumentMoniker": "quiz.html",
               "ToolTip": "D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\quiz.html",
               "RelativeToolTip": "quiz.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAUwBkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-10-08T05:46:23.146Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "ad10e72e-4af3-43a1-ba25-b2682254461a",
-        "Display": 0,
-        "X": 1558,
-        "Y": 120,
-        "Width": 1578,
-        "Height": 990,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html",
-              "DocumentMoniker": "D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html",
-              "RelativeDocumentMoniker": "20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html",
-              "ToolTip": "D:\\myspace\\source\\03_HTML_CSS\\ch04_CSS \uC120\uD0DD\uC790\\20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html",
-              "RelativeToolTip": "20_\uAD6C\uC870\uC120\uD0DD\uC790(\uAC00\uB85C).html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-08T05:54:40.097Z",
               "EditorCaption": ""
             }
           ]

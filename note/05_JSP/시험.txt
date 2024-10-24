@@ -1,0 +1,13 @@
+WEB(5문항) - ch02 참조, window.onload
+배워 놓은 VS Code 깃허브 참조하여 외우기
+
+JAVA(6문항) = 클래스 구현, Collection, 자바 코드 보고 실행결과 적기
+
+JAVA + JSP = DB연동 2문제
+	Package, getter and setter, 생성자 함수
+JSP = 2문항
+	ArrayList, HashMap
+
+ArrayList<String> a= new Array~();
+HashMap<Integer, String>b= a. add("뭐시기");
+b.put("머시기")

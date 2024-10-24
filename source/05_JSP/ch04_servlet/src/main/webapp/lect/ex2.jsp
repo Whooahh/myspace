@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h2>오늘의 메뉴와 식당 선택</h2>
-	<form action="<%=conPath %>/ex2" method="post">
+	<form action="<%=conPath %>/ex2" method="get">
 		<p>
 			메뉴
 			<select name="menu" multiple="multiple" size="3">
