@@ -17,14 +17,26 @@
 			<h3>첫 방문 감사합니다</h3>
 		</c:when>
 		<c:when test="${visitNum>1 && visitNum<=5 }">
-			<h3>많이 많이 방문해주세요</h3>
+			<h3>많이 많이 방문해 주세요</h3>
 		</c:when>
 		<c:when test="${visitNum > 5 }">
 			<h3>많은 방문 감사합니다</h3>
 		</c:when>
-			<c:when test="${empty visitNum }">
-			<h3>방문 횟수 입력 페이지 부터 실행해야지</h3>
+		<c:when test="${empty visitNum }">
+			<h3>방문 횟수 입력 페이지부터 실행해야지</h3>
 		</c:when>
 	</c:choose>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

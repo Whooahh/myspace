@@ -27,3 +27,11 @@ public class EmpList extends HttpServlet {
 		doGet(request, response);
 	}
 }
+
+
+
+
+
+
+
+

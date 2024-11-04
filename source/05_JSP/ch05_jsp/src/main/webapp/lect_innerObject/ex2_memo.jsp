@@ -8,12 +8,12 @@
 	<title>Insert title here</title>
 	<link href="<%=conPath %>/css/ex.css" rel="stylesheet" type="text/css">
 	<script>
-		window.onload = () => {
+		window.onload = ()=>{
 			document.querySelector("input[name='memo']").onkeyup = function(){
 				var span = document.querySelector('span');
 				span.innerHTML = this.value.length + '/30';
-			}
-		}
+			};
+		};
 	</script>
 </head>
 <body>
@@ -21,19 +21,33 @@
 		<table>
 			<tr>
 				<th>작성자</th>
-				<th>한 줄 메모</th>
+				<th>한줄메모</th>
 			</tr>
 			<tr>
 				<td><input type="text" name="writer" size="3"></td>
-				<td><input type="text" name="memo" maxlength="30" size="20">
-				<span>0/30</span>
-			</td>	
+				<td>
+					<input type="text" name="memo" maxlength="30" size="25">
+					<span>0/30</span>
+				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" name="작성"></td>
+				<td colspan="2"><input type="submit" value="작성"></td>
 			</tr>
 		</table>
-	
 	</form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

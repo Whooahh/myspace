@@ -12,3 +12,10 @@ SELECT E.*, DNAME
 SELECT E.*, DNAME
   FROM EMP E, DEPT D
   WHERE E.DEPTNO=D.DEPTNO AND ENAME LIKE '%'||TRIM(UPPER(' c '))||'%'; -- '%s%'
+
+
+
+
+
+
+

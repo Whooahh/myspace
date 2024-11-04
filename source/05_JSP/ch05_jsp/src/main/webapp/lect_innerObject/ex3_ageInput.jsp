@@ -10,8 +10,19 @@
 </head>
 <body>
 	<form action="<%=conPath %>/ex3_agePro" method="post">
-		나이<input type="text" name="age" min="0" required="required">
+		나이 <input type="text" name="age" min="0" required="required">
 		<input type="submit" value="인증">
 	</form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

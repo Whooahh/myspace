@@ -9,14 +9,25 @@
 	<link href="<%=conPath %>/css/ex.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h3>ageInput.jsp(나이 입력) -> /ex3_agePro(나이에 따른 분기) -> pass.jsp?age=20</h3>
-<%
-	String str = request.getParameter("age");
-	int age = Integer.parseInt(str);
-%>
+	<h3>ageInput.jsp(나이입력) -> /ex3_agePro(나이에 따른 분기) -> pass.jsp?age=20</h3>
+	<%
+		int age = Integer.parseInt(request.getParameter("age"));
+	%>
 	<h3><%=age %>살 성인이니 주류 구매 가능합니다</h3>
 	<button onclick="history.back()">뒤로가기</button>
 	<button onclick="location.href='ex3_ageInput.jsp'">새로입력</button>
-	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

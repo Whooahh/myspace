@@ -24,3 +24,16 @@
 	varName(삭제한 후 변수) : ${empty varName ? "삭제된변수" : varName } <br>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

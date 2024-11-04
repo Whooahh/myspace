@@ -6,6 +6,6 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-	<%response.sendRedirect("lect_jspTag/ex1_scriptlet.jsp");%>
+	<%response.sendRedirect("lect_jspTag/ex1_scriptlet.jsp"); %>
 </body>
 </html>

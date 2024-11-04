@@ -26,14 +26,27 @@
 	<c:if test="${visitNum eq 1 }">
 		<h3>첫 방문 감사합니다</h3>
 	</c:if>
-	<c:if test="${visitNum>1 } && visitNum<=5}">
-	<h3>많이 많이 방문해 주세요</h3>
+	<c:if test="${visitNum>1 && visitNum<=5 }">
+		<h3>많이 많이 방문해 주세요</h3>
 	</c:if>
-	<c:if test="${visitNum<5 }">
-	<h3>많이 방문해 주셔서 감사합니다</h3>
+	<c:if test="${visitNum >5 }">
+		<h3>많이 방문해 주셔서 감사합니다</h3>
 	</c:if>
 	<c:if test="${empty visitNum }">
-	<h3>visitNum 파라미터를 받지 못했습니다</h3>
+		<h3>visitNum 파라미터를 받지 못했습니다</h3>
 	</c:if>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
