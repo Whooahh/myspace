@@ -1,2 +1,4 @@
-name,phone,email,age,grade,etc
-이순신,010-3333-3333,s@sin.com,50,2,2
+NAME,PHONE,EMAIL,AGE,GRADE,ETC
+김길동,010-9876-5432,k@kim.com,30,1,부
+스코트,010-2323-2323,scott@oracle.com,50,1,Scott
+홍길동,010-2345-6789,h@hong.com,25,1,주
